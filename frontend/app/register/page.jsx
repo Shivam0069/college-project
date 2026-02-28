@@ -43,7 +43,7 @@ export default function RegisterPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -73,7 +73,7 @@ export default function RegisterPage() {
     }
 
     setLoading(true);
-    const result = registerStudent(formData);
+    const result = await registerStudent(formData);
 
     if (result.success) {
       setSuccess(result.message);
